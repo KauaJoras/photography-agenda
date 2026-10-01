@@ -13,6 +13,8 @@ public class Essay {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDate date;
+
+    @Column(name = "hour")
     private LocalTime time;
 
     @ManyToOne
@@ -27,7 +29,7 @@ public class Essay {
     public Essay(){
     }
 
-    public Essay(Integer id, LocalDate date, LocalTime time, Client client, EssayType essayType){
+    public Essay(LocalDate date, LocalTime time, Client client, EssayType essayType){
         this.date = date;
         this.time = time;
         this.client = client;
